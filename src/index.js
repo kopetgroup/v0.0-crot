@@ -13,10 +13,10 @@ import "./style.css";
 function App () {
     var items = JSON.parse(document.getElementById("jspos").innerHTML);
     const breakpointColumnsObj = {
-        default: 4,
-        1100: 4,
-        700: 3,
-        500: 3
+        default: 3,
+        1100: 3,
+        700: 2,
+        500: 2
     };
     // Convert array to JSX items
     items = items.map(function (item) {
