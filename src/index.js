@@ -1,24 +1,17 @@
-/*import React from 'react'; 
-import ReactDOM from 'react-dom';
-import App from './components/App';
-
-ReactDOM.render(<App />, document.getElementById('app'))
-*/
-
 import React from "react";
 import ReactDOM from "react-dom";
 import Masonry from "react-masonry-css";
 
 import "./style.css";
-function App () {
+
+function App (props) {
     var items = JSON.parse(document.getElementById("jspos").innerHTML);
     const breakpointColumnsObj = {
-        default: 3,
+        default: parseInt(props.col),
         1100: 3,
         700: 2,
         500: 2
     };
-    // Convert array to JSX items
     items = items.map(function (item) {
         return (
             <div key={item.src}>
@@ -29,5 +22,6 @@ function App () {
     return <Masonry breakpointCols={breakpointColumnsObj}>{items}</Masonry>;
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+const c = document.getElementById("imgal");
+let cl = c.getAttribute('gridcol')
+ReactDOM.render(<App col={cl} />, c);
