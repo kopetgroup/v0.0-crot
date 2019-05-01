@@ -13,7 +13,7 @@ import "./style.css";
 function App () {
     var items = JSON.parse(document.getElementById("jspos").innerHTML);
     const breakpointColumnsObj = {
-        default: 5,
+        default: 4,
         1100: 4,
         700: 3,
         500: 3
